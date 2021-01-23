@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="renderer" content="webkit">
+<!-- 基本配置 -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="renderer" content="webkit">
+<!-- 基本配置 end-->
 
-  
-  <title>Hey-Play</title>
+<!-- 标题、图标以及 RSS -->
 
-  <link rel="shortcut icon" href="/images/favicon.png">
-  <link rel="alternate" href="/atom.xml" title="Hey-Play" type="application/atom+xml">
-  <meta name="description" content="好吧其实就是 O7I2 的个人网站（">
+<title>Hey-Play</title>
+<link rel="shortcut icon" href="/images/favicon.png">
+<link rel="alternate" href="/rss.xml" title="Hey-Play" type="application/rss+xml">
+<!-- 标题、图标以及 RSS end-->
+
+<!-- Open Graph 标签 -->
+<meta name="description" content="好吧其实就是 O7I2 的个人网站（">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hey-Play">
 <meta property="og:url" content="https://heyplay.eu.org/index.html">
@@ -21,242 +27,216 @@
 <meta property="og:locale">
 <meta property="article:author" content="O7I2">
 <meta name="twitter:card" content="summary">
+<!-- Open Graph 标签 end-->
 
-  <meta name="keywords" content="">
-  <meta name="format-detection" content="telephone=no,email=no">
-  <meta name="theme-color" content="#03A9F4">
+<!-- 站点更多配置 -->
+<meta name="keywords" content="">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="theme-color" content="#03A9F4">
 
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Hey-Play">
-  <meta name="msapplication-starturl" content="https://heyplay.eu.org/">
-  <meta name="msapplication-navbutton-color" content="#9C27B0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Hey-Play">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="apple-touch-icon" href="/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hey-Play">
+<meta name="msapplication-starturl" content="https://heyplay.eu.org/">
+<meta name="msapplication-navbutton-color" content="#9C27B0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hey-Play">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="/images/favicon.png">
 
-  
-    <link rel="canonical" href="https://heyplay.eu.org">
-  
+
+<link rel="canonical" href="https://heyplay.eu.org">
+
+<!-- 站点更多配置 end-->
+<link rel="stylesheet" href="//assets.heyplay.eu.org/dist/mdui/css/mdui.min.css" />
+<link rel="stylesheet" href="//assets.heyplay.eu.org/www/style.css" />
 <meta name="generator" content="Hexo 5.2.0"></head>
-  <link rel="stylesheet" href="//assets.heyplay.eu.org/dist/mdui/css/mdui.min.css" />
-  <link rel="stylesheet" href="//assets.heyplay.eu.org/www/style.css" />
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-light-blue mdui-theme-accent-orange mdui-theme-layout-auto">
-  <header id="header" class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
-  <div class="mdui-toolbar mdui-color-theme">
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
-    <a href="/" class="mdui-typo-headline">Hey-Play</a>
-    <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
-    <a href="/atom.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS 订阅'}"><i class="mdui-icon material-icons">rss_feed</i></a>
-  </div>
+
+<body class="mdui-theme-primary-light-blue mdui-theme-accent-orange mdui-theme-layout-auto mdui-appbar-with-toolbar mdui-drawer-body-left">
+	<header id="header" class="mdui-appbar mdui-appbar-fixed">
+	<div class="mdui-toolbar mdui-color-theme">
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+		<a href="/" class="mdui-typo-headline">Hey-Play</a>
+		<div class="mdui-toolbar-spacer"></div>
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+		<a href="/rss.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS 订阅'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+	</div>
 </header>
 <div class="mdui-dialog" id="search">
-  
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="https://heyplay.eu.org"></form>
-    <div class="search-result"></div>
-  
+	
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="请输入关键字"><input type="hidden" name="sitesearch" value="https://heyplay.eu.org"></form>
+		<div class="search-result"></div>
+	
 </div>
-  <aside id="sidebar" class="mdui-drawer">
-  <div class="mdui-grid-tile">
-    <img src="/images/banner.png" style="height: 160px;">
-    <img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
-    <div class="mdui-grid-tile-actions">
-      <div class="mdui-grid-tile-text">
-        <div class="mdui-grid-tile-title">O7I2</div>
-        <div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>Hey-Play 公式网站</div>
-      </div>
-      
-    </div>
-  </div>
+	<aside id="sidebar" class="mdui-drawer">
+	<div class="mdui-grid-tile">
+		<img src="/images/banner.png" style="height: 160px;">
+		<img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+		<div class="mdui-grid-tile-actions">
+			<div class="mdui-grid-tile-text">
+				<div class="mdui-grid-tile-title">O7I2</div>
+				<div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>Hey-Play 公式网站</div>
+			</div>
+			
+				<div class="mdui-grid-tile-buttons">
+					<a href="mailto:jerryo7i2@outlook.com" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'jerryo7i2@outlook.com'}"><i class="mdui-icon material-icons">email</i></a>
+				</div>
+			
+		</div>
+	</div>
 
-  <div class="mdui-list" mdui-collapse="{accordion: true}">
-    <a href="/" class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
-      <div class="mdui-list-item-content">首页</div>
-    </a>
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
-        <div class="mdui-list-item-content">归档</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        <a class="mdui-ripple sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="mdui-ripple sidebar_archives-count">3</span></a>
-        
-      </div>
-    </div>
-    <div class="mdui-collapse-item">
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
-        <div class="mdui-list-item-content">分区</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        
-        
-          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center">并没有分区（</a>
-        
-      </div>
-    </div>
-    <div class="mdui-collapse-item">
-      <!--script>var a=localStorage.getItem("mdui-collapse-item-2");if(a){document.getElementsByClassName("mdui-collapse-item")[2].className+=" mdui-collapse-item-open"};</script-->
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
-        <div class="mdui-list-item-content">标签</div>
-        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        
-        
-          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">并没有标签</a>
-        
-      </div>
-    </div>
-    <a href="/about" class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
-      <div class="mdui-list-item-content">关于</div>
-    </a>
-  </div>
+	<div class="mdui-list" mdui-collapse="{accordion: true}">
+		<a href="/" class="mdui-list-item mdui-ripple">
+			<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+			<div class="mdui-list-item-content">首页</div>
+		</a>
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+				<div class="mdui-list-item-content">归档</div>
+				<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				<a class="mdui-ripple sidebar_archives-link" href="/archives/2021/01/">January 2021<span class="mdui-ripple sidebar_archives-count">1</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="mdui-ripple sidebar_archives-count">1</span></a>
+				
+			</div>
+		</div>
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+				<div class="mdui-list-item-content">分区</div>
+				<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				
+				
+					<a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center">并没有分区（</a>
+				
+			</div>
+		</div>
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+				<div class="mdui-list-item-content">标签</div>
+				<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				
+				
+					<a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">并没有标签</a>
+				
+			</div>
+		</div>
+		<a href="/about" class="mdui-list-item mdui-ripple">
+			<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+			<div class="mdui-list-item-content">关于</div>
+		</a>
+	</div>
 
-  <div class="mdui-divider"></div>
+	<div class="mdui-divider"></div>
 
-  <div class="mdui-list" mdui-collapse="{accordion: true}">
-    
-      <a href="/timeline" class="mdui-list-item mdui-ripple">时间轴</a>
-    
-      <a href="/tagcloud" class="mdui-list-item mdui-ripple">标签云</a>
-    
-      <a href="/gallery" class="mdui-list-item mdui-ripple">相册</a>
-    
-    <div class="mdui-collapse-item">
-      <!--script>var a=localStorage.getItem("mdui-collapse-item-3");if(a){document.getElementsByClassName("mdui-collapse-item")[3].className+=" mdui-collapse-item-open"};</script-->
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-        <div class="mdui-list-item-content">链接</div>
-        <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
-      </div>
-      <div class="mdui-collapse-item-body mdui-list mdui-list-dense">
-        
-        
-          <a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">并没有链接</a>
-        
-      </div>
-    </div>
-  </div>
+	<div class="mdui-list" mdui-collapse="{accordion: true}">
+		
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<div class="mdui-list-item-content">链接</div>
+				<i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				
+					<a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">并没有链接</a>
+				
+			</div>
+		</div>
+	</div>
 </aside>
-  <main id="main" class="mdui-container-fluid">
-    <artcle id="content" class="mdui-container">
+	<main id="main" class="mdui-container-fluid">
+		<artcle id="content" class="mdui-container">
+			
 
 
 
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/article/my-status-2020-12/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-4.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">我的状态（2020年12月）</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-11 / <i class="iconfont">&#xe601;</i> O7I2</div>
-          </div>
-        </div>
-        
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        这个嘛，，很糟糕。具体嘛等双休日再说
-……
-      
-    </div>
-    <div class="mdui-text-center">
-      <a href="/article/my-status-2020-12/" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-color-theme-accent mdui-ripple">查看更多</a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-    </footer>
-  </article>
+	<article class="mdui-card mdui-m-b-5 mdui-hoverable">
+		<a href="/article/hello-world/">
+			<header class="mdui-card-media mdui-ripple">
+				<img src="/images/random/material-9.png" style="max-height: 240px;">
+				<div class="mdui-card-media-covered">
+					<div class="mdui-card-primary">
+						<div class="mdui-card-primary-title">Hello World</div>
+						<div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-01-17 / <i class="iconfont">&#xe601;</i> O7I2</div>
+					</div>
+				</div>
+				
+			</header>
+		</a>
+		<div class="mdui-card-content mdui-typo">
+			
+				Welcome to Hexo! This is your very first po...……
+			
+		</div>
+		<div class="mdui-text-center">
+			<a href="/article/hello-world/" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-color-theme-accent mdui-ripple">查看更多</a>
+		</div>
+		<footer class="mdui-card-actions">
+			
+			
+		</footer>
+	</article>
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/article/hexo-migration/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-8.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">关于网站软件迁移到了 Hexo</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-04 / <i class="iconfont">&#xe601;</i> O7I2</div>
-          </div>
-        </div>
-        
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        为啥要迁移……
-      
-    </div>
-    <div class="mdui-text-center">
-      <a href="/article/hexo-migration/" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-color-theme-accent mdui-ripple">查看更多</a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-    </footer>
-  </article>
+	<article class="mdui-card mdui-m-b-5 mdui-hoverable">
+		<a href="/article/hexo-migration/">
+			<header class="mdui-card-media mdui-ripple">
+				<img src="/images/random/material-18.png" style="max-height: 240px;">
+				<div class="mdui-card-media-covered">
+					<div class="mdui-card-primary">
+						<div class="mdui-card-primary-title">关于网站软件迁移到了 Hexo</div>
+						<div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-04 / <i class="iconfont">&#xe601;</i> O7I2</div>
+					</div>
+				</div>
+				
+			</header>
+		</a>
+		<div class="mdui-card-content mdui-typo">
+			
+				为啥要迁移……
+			
+		</div>
+		<div class="mdui-text-center">
+			<a href="/article/hexo-migration/" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-color-theme-accent mdui-ripple">查看更多</a>
+		</div>
+		<footer class="mdui-card-actions">
+			
+			
+		</footer>
+	</article>
 
-  <article class="mdui-card mdui-m-b-5 mdui-hoverable">
-    <a href="/article/hello-world/">
-      <header class="mdui-card-media mdui-ripple">
-        <img src="/images/random/material-9.png" style="max-height: 240px;">
-        <div class="mdui-card-media-covered">
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">Hello World</div>
-            <div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2020-12-04 / <i class="iconfont">&#xe601;</i> O7I2</div>
-          </div>
-        </div>
-        
-      </header>
-    </a>
-    <div class="mdui-card-content mdui-typo">
-      
-        Welcome to Hexo! This is your very first po...……
-      
-    </div>
-    <div class="mdui-text-center">
-      <a href="/article/hello-world/" class="mdui-btn mdui-btn-raised mdui-btn-dense mdui-color-theme-accent mdui-ripple">查看更多</a>
-    </div>
-    <footer class="mdui-card-actions">
-      
-      
-    </footer>
-  </article>
 
-</artcle>
-  </main>
-  <footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-  <div class="mdui-p-y-0 mdui-text-center">
-<p><span id="hitokoto"></span></p>
-  </div>
-  <div class="mdui-p-y-1 mdui-text-center">
-   <p> 2019 - 2020 &copy; O7I2 | All rights reserved.</p>
-   <p>感谢来自 <a href="//chinq.xyz?ref=heyplay" target="_blank" class="mdui-text-color-theme-accent">CHINQ</a> 的帮助与支持</p>
-  </div>
-
+		</artcle>
+	</main>
+	<footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+	<div class="mdui-p-y-0 mdui-text-center">
+		<p><span id="hitokoto"></span></p>
+		<p>2021 &copy; O7I2 | All rights reserved.<br>
+			Thanks <a href="https://www.chinq.xyz/?ref=heyplay" target="_blank" class="mdui-text-color-theme-accent" rel="nofollow">CHINQ</a> for her help!</p>
+	</div>
+	
 </footer>
 <!-- Hitokoto 一言 -->
-<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
-<!-- MDUI, pjax.js, pace.js -->
-  <script src="//assets.heyplay.eu.org/dist/mdui/js/mdui.min.js"></script>
-  <script src="//assets.heyplay.eu.org/dist/pjax/pjax.min.js"></script>
-  <script src="//assets.heyplay.eu.org/dist/pace/pace.min.js"></script>
-<!-- Main -->
-  <script src="//assets.heyplay.eu.org/www/script.js"></script>
-<!-- Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "37f1b1b524134094a86158bd4ba113ce"}'></script>
+<script defer src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"></script>
+	<button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_upward</i></button>
+	<!-- Main -->
+	<script src="/assets/main.js"></script>
+	<!-- MDUI, pjax.js, pace.js -->
+	<script src="//assets.heyplay.eu.org/dist/mdui/js/mdui.min.js"></script>
+	<!--script src="//assets.heyplay.eu.org/dist/pjax/pjax.min.js"></script-->
+	<script src="//assets.heyplay.eu.org/dist/pace/pace.min.js"></script>
+	<!-- Web Analytics -->
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{'token': '37f1b1b524134094a86158bd4ba113ce'}"></script>
+	<script>/*百度*/var _hmt=_hmt||[];</script><script defer src="https://hm.baidu.com/hm.js?aeaa4ef969dfd911a5883a704f303f6d"></script>
 </body>
+
 </html>
