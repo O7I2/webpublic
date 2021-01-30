@@ -459,6 +459,59 @@
 	content: "\eaf1\20";
 }
 
+/* Paginator Style */
+#paginator {
+	display: flex;
+	font-weight: 300;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.page-number {
+	display: none;
+}
+
+.page-number.current {
+	display: block;
+	color: inherit;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.page-number.current:before {
+	content: "- ";
+}
+
+.page-number.current:after {
+	content: " -";
+}
+
+#paginator .extend {
+	text-decoration: none;
+	color: inherit;
+	position: absolute;
+}
+
+#paginator .extend.prev {
+	left: 8px;
+}
+
+#paginator .extend.next {
+	right: 8px;
+}
+
+#paginator .spacer {
+	flex-grow: 1;
+	text-align: center;
+}
+
+#paginator .spacer:before {
+	content: "/";
+}
+
 /* Pace Style */
 .pace {
 	pointer-events: none;

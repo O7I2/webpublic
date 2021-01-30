@@ -87,7 +87,7 @@ heyplay.hitokoto.load = function () {
 						}[hitokoto.commit_from] |
 							hitokoto.commit_from
 						} 端，${hitokoto.created_at} 时 添加\n` + 
-					`该 hitotoko 有 ${hitokoto.length}${hitokoto.hitokoto.length===hitokoto.length?"":`(${hitokoto.hitokoto.length})`} 个字长，ID 为 ${hitokoto.id}，UUID 为 ${hitokoto.uuid}，审核员标识为 ${hitokoto.reviewer}`
+					`该 hitokoto 有 ${hitokoto.length}${hitokoto.hitokoto.length===hitokoto.length?"":`(${hitokoto.hitokoto.length})`} 个字长，ID 为 ${hitokoto.id}，UUID 为 ${hitokoto.uuid}，审核员标识为 ${hitokoto.reviewer}`
 				}" onclick='mdui.dialog({"title":"Hitokoto 详细信息","content":this.title.replace(/\\n/g,"<br>"),"buttons":[{"text":"换一个","onClick":heyplay.hitokoto.load},{"text": "关闭"}]});'>${hitokoto.hitokoto}</span>`;
 			heyplay.log("hitokoto 完毕");
 		});

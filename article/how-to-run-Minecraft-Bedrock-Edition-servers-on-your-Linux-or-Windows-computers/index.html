@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+<!-- 基本配置 -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="renderer" content="webkit">
+<!-- 基本配置 end-->
+
+<!-- 标题、图标以及 RSS -->
+
+<title>如何在你的 Linux 或 Windows 计算机上运行 Minecraft &#34;Bedrock Dedicated Server&#34; 服务器 | Hey-Play</title>
+<link rel="shortcut icon" href="/images/favicon.png">
+<link rel="alternate" href="/rss.xml" title="Hey-Play" type="application/rss+xml">
+<!-- 标题、图标以及 RSS end-->
+
+<!-- Open Graph 标签 -->
+<meta name="description" content="如何在你的 Linux 或 Windows 计算机上运行 Minecraft “Bedrock Dedicated Server” 服务器为什么会有这篇文章很多人想开服，但是网上绝大多数的教程都是 Java 版的，很少有基岩版的。一方面是现在网上的基岩版服务端很少，只有像官方的 Bedrock Dedicated Server, PocketMine-MP, NukkitX（而且第三方服务端的地形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在你的 Linux 或 Windows 计算机上运行 Minecraft &quot;Bedrock Dedicated Server&quot; 服务器">
+<meta property="og:url" content="https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/index.html">
+<meta property="og:site_name" content="Hey-Play">
+<meta property="og:description" content="如何在你的 Linux 或 Windows 计算机上运行 Minecraft “Bedrock Dedicated Server” 服务器为什么会有这篇文章很多人想开服，但是网上绝大多数的教程都是 Java 版的，很少有基岩版的。一方面是现在网上的基岩版服务端很少，只有像官方的 Bedrock Dedicated Server, PocketMine-MP, NukkitX（而且第三方服务端的地形">
+<meta property="og:locale">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/download-server-zipped.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/unzip-server-container.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/configuration.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/firewall.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/server-first-start.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/local-network-computer-windows-ipconfig.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/local-network-computer-windows-settings.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/client-configuration.png">
+<meta property="og:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/client-servers-list.png">
+<meta property="article:published_time" content="2021-01-30T05:48:30.000Z">
+<meta property="article:modified_time" content="2021-01-30T09:30:27.485Z">
+<meta property="article:author" content="O7I2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/download-server-zipped.png">
+<!-- Open Graph 标签 end-->
+
+<!-- 站点更多配置 -->
+<meta name="keywords" content="">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="theme-color" content="#03A9F4">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Hey-Play">
+<meta name="msapplication-starturl" content="https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/">
+<meta name="msapplication-navbutton-color" content="#9C27B0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hey-Play">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+
+<link rel="canonical" href="https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/">
+
+<!-- 站点更多配置 end-->
+<link rel="stylesheet" href="//assets.heyplay.eu.org/dist/mdui/css/mdui.min.css" />
+<link rel="stylesheet" href="/assets/style.css" />
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="mdui-theme-primary-light-blue mdui-theme-accent-orange mdui-theme-layout-auto mdui-appbar-with-toolbar mdui-drawer-body-left">
+	<main id="main" class="mdui-container-fluid">
+		<artcle id="content" class="mdui-container">
+			
+	<style>#main article .mdui-card-content .center-block{display:block!important;margin-right:auto!important;margin-left:auto!important}</style>
+	<article class="mdui-card mdui-m-b-5">
+		<header class="mdui-card-media">
+			<img src="/images/random/material-17.png" style="max-height: 240px;">
+			<div class="mdui-card-media-covered">
+				<div class="mdui-card-primary">
+					<div class="mdui-card-primary-title">如何在你的 Linux 或 Windows 计算机上运行 Minecraft &#34;Bedrock Dedicated Server&#34; 服务器</div>
+					<div class="mdui-card-primary-subtitle"><i class="iconfont">&#xe697;</i> 2021-01-30 / <i class="iconfont">&#xe601;</i> O7I2</div>
+				</div>
+			</div>
+			<div class="mdui-card-menu">
+				
+					<button class="mdui-btn mdui-btn-icon mdui-text-color-white" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+					<ul class="mdui-menu" id="share_menu">
+						<li class="mdui-menu-item">
+							<a href="https://twitter.com/intent/tweet?text=如何在你的 Linux 或 Windows 计算机上运行 Minecraft &#34;Bedrock Dedicated Server&#34; 服务器&url=https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/&via=O7I2" target="_blank" class="mdui-ripple">分享到 Twitter</a>
+						</li>
+						<li class="mdui-menu-item">
+							<a href="https://t.me/share/url?url=https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/&text=如何在你的 Linux 或 Windows 计算机上运行 Minecraft &#34;Bedrock Dedicated Server&#34; 服务器" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+						</li>
+					</ul>
+				
+			</div>
+		</header>
+		<div class="mdui-card-content mdui-typo">
+			<h1 id="如何在你的-Linux-或-Windows-计算机上运行-Minecraft-“Bedrock-Dedicated-Server”-服务器"><a href="#如何在你的-Linux-或-Windows-计算机上运行-Minecraft-“Bedrock-Dedicated-Server”-服务器" class="headerlink" title="如何在你的 Linux 或 Windows 计算机上运行 Minecraft “Bedrock Dedicated Server” 服务器"></a>如何在你的 Linux 或 Windows 计算机上运行 Minecraft “Bedrock Dedicated Server” 服务器</h1><h2 id="为什么会有这篇文章"><a href="#为什么会有这篇文章" class="headerlink" title="为什么会有这篇文章"></a>为什么会有这篇文章</h2><p>很多人想开服，但是网上绝大多数的教程都是 Java 版的，很少有基岩版的。一方面是现在网上的基岩版服务端很少，只有像官方的 <a target="_blank" rel="noopener" href="https://minecraft.net/download/server/bedrock/">Bedrock Dedicated Server</a>, PocketMine-MP, NukkitX（而且第三方服务端的地形生成和特性和原版不一致，不适合作为生存服务器）之类的(更多可以在Wiki上看到)；而Java版就多了：除了官方的还有 Bukkit, Spigot, Paper 等等（不仅这样还有大量插件支持）</p>
+<p><del>还有就是一年前写的那篇太烂了我看不下去</del></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>这篇文章我们将使用官方的 <a target="_blank" rel="noopener" href="https://minecraft.net/download/server/bedrock/">Bedrock Dedicated Server</a> 来开服，版本是 <a target="_blank" rel="noopener" href="https://minecraft.azureedge.net/bin-win/bedrock-server-1.16.201.02.zip">1.16.201.02</a></p>
+<h3 id="下载及解压"><a href="#下载及解压" class="headerlink" title="下载及解压"></a>下载及解压</h3><p>从<a target="_blank" rel="noopener" href="https://minecraft.net/download/server/bedrock/">官方网站</a>更具你的操作系统下载对应的压缩包</p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/download-server-zipped.png"></p>
+<blockquote>
+<p>注：如果中文(zh-hans)网站加载不出来就换成英文(en-xx，例如en-us)试试，原因未知(2020.01.30 14:07)<br>注2: 如果下载缓慢可以看看文末的办法</p>
+</blockquote>
+<p>并解压</p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/unzip-server-container.png"></p>
+<p>您应该会见到如下的文件结构</p>
+<ul>
+<li>behavior_packs/ 行为包</li>
+<li>definitions/ 大概是游戏内容之类的</li>
+<li>resource_packs/ 材质包</li>
+<li>structures/ 结构，就是村庄之类的建筑</li>
+<li>bedrock_server(.exe) 可执行文件</li>
+<li>(bedrock_server.pdb) 好像是代码编译库，我不搞开发我也不清楚</li>
+<li>bedrock_server_how_to.html 自带的说明文件，说的也十分详细</li>
+<li>permissions.json 记录着权限，例如管理员</li>
+<li>release-notes.txt 更新笔记</li>
+<li>server.properties 服务器配置文件</li>
+<li>whitelist.json 白名单</li>
+</ul>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>主要的配置都在 <code>server.properties</code> 里，详细请见文末以及 <code>bedrock_server_how_to.html</code></p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/configuration.png"></p>
+<h2 id="开服"><a href="#开服" class="headerlink" title="开服"></a>开服</h2><p>Windows 下请双击 <code>bedrock_server.exe</code>，Linux 请在终端输入 <code>LD_LIBRARY_PATH=. ./bedrock_server</code>  </p>
+<p>如果提示</p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/firewall.png"></p>
+<p>请根据实际情况允许或拒绝；</p>
+<p>如果您出现了 <code>缺少 xxx.dll</code> 或类似的提示窗口，请将 Windows 更新至 Windows10 1904 或 Windows Server 2019 及以上并安装 Microsoft Visual C++ 2015-2019 的 x64 版本运行库</p>
+<p>接着您应该会看到这样或类似的窗口:</p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/server-first-start.png"></p>
+<p>那么恭喜，您已经成功了一小半了</p>
+<h3 id="加入服务器"><a href="#加入服务器" class="headerlink" title="加入服务器"></a>加入服务器</h3><p>如果您没有更改配置，您应该可以看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">NO LOG FILE! - setting up server logging...</span><br><span class="line">[2021-01-30 14:25:25 INFO] Starting Server</span><br><span class="line">[2021-01-30 14:25:25 INFO] Version &lt;verison&gt;</span><br><span class="line">[2021-01-30 14:25:25 INFO] Session ID &lt;uuid&gt;</span><br><span class="line">[2021-01-30 14:25:25 INFO] Level Name: Bedrock level</span><br><span class="line">[2021-01-30 14:25:25 INFO] Game mode: 0 Survival</span><br><span class="line">[2021-01-30 14:25:25 INFO] Difficulty: 2 NORMAL</span><br><span class="line">[INFO] opening worlds&#x2F;Bedrock level&#x2F;db</span><br><span class="line">[INFO] IPv4 supported, port: 19132</span><br><span class="line">[INFO] IPv6 supported, port: 19133</span><br><span class="line">[INFO] IPv4 supported, port: 55874</span><br><span class="line">[INFO] IPv6 supported, port: 55875</span><br><span class="line">[INFO] Server started.</span><br></pre></td></tr></table></figure>
+<p>从 <code>[INFO] IPv4 supported, port: 19132</code> 我们可以知道服务器在 19132 UDP 端口监听，我们可以试着加入服务器  </p>
+<blockquote>
+<p>如果开启了白名单，请先使用命令 <code>whitelist add &lt;player name&gt;</code> 添加白名单</p>
+</blockquote>
+<p>如果您是在本机开启的服务器，请使用 <code>localhost</code> 或 <code>127.0.0.1</code> 作为 IP 加入服务器，并解除 UWP 应用的 App Container 换回限制<br>请在 PowerShell 或 cmd.exe 使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CheckNetIsolation LoopbackExempt -a -p&#x3D;S-1-15-2-1958404141-86561845-1752920682-3514627264-368642714-62675701-733520436</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CheckNetIsolation LoopbackExempt -a -n&#x3D;&quot;Microsoft.MinecraftUWP_8wekyb3d8bbwe&quot;</span><br></pre></td></tr></table></figure>
+<p>；如果您是使用云服务器服务商提供的服务器，请查看他们给的IP；如果您是使用的局域网电脑（比如我），您在您局域网内的电脑的命令行或终端上输入 <code>ipconfig</code>(Windows) <code>ifconfig</code>(Linux) 或查看设置，寻找 <code>以太网适配器 以太网</code></p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/local-network-computer-windows-ipconfig.png"><br><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/local-network-computer-windows-settings.png"></p>
+<p>例如我这边是 <code>192.168.1.11</code> </p>
+<p>打开 Minecraft &gt; 游戏 &gt; 服务器 &gt; 添加服务器，输入服务器名称（随意），IP，端口</p>
+<p><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/client-configuration.png"><br><img src="https://assets.heyplay.eu.org/image/post/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/client-servers-list.png"></p>
+<p>您应该就可以进入服务器了</p>
+<p><strong>映射以及IPv6方式进入服务器、服务器配置、配置文件翻译未完待续（（（</strong></p>
+
+			
+			<blockquote>
+				
+				<strong>页面链接</strong><br><a href="https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/">https://heyplay.eu.org/article/how-to-run-Minecraft-Bedrock-Edition-servers-on-your-Linux-or-Windows-computers/</a>
+			</blockquote>
+		</div>
+		<footer class="mdui-card-actions">
+			
+			
+		</footer>
+		
+	</article>
+
+
+	<nav id="paginator">
+		
+		<div class="spacer"></div>
+		
+			<a rel="next" class="extend next" href="/article/hello-world/">
+				<span class="mdui-p-x-3" mdui-tooltip="{content: 'Hello World'}">下一个</span>
+				<button aria-label="next" class="mdui-btn mdui-btn-raised mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-icon material-icons">arrow_forward</i></button>
+			</a>
+		
+	</nav>
+
+
+		</artcle>
+	</main>
+	<header id="header" class="mdui-appbar mdui-appbar-fixed">
+	<div class="mdui-toolbar mdui-color-theme">
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+		<a href="/" class="mdui-typo-headline">Hey-Play</a>
+		<div class="mdui-toolbar-spacer"></div>
+		<a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '搜索'}"><i class="mdui-icon material-icons">search</i></a>
+		<a href="/rss.xml" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS 订阅'}"><i class="mdui-icon material-icons">rss_feed</i></a>
+	</div>
+</header>
+<div class="mdui-dialog" id="search">
+	<hey>搜索功能考虑中...</hey>
+</div>
+	<aside id="sidebar" class="mdui-drawer">
+	<div class="mdui-grid-tile">
+		<img src="/images/banner.png" style="height: 160px;">
+		<img src="/images/avatar.png" class="avatar-animation" style="position: absolute; top: 10%; left: 24px; width: 64px; height: 64px; border: 2px solid #fff; border-radius: 50%;">
+		<div class="mdui-grid-tile-actions">
+			<div class="mdui-grid-tile-text">
+				<div class="mdui-grid-tile-title">O7I2</div>
+				<div class="mdui-grid-tile-subtitle"><i class="mdui-icon material-icons">art_track</i>Hey-Play 公式网站</div>
+			</div>
+			
+				<div class="mdui-grid-tile-buttons">
+					<a href="mailto:jerryo7i2@outlook.com" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'jerryo7i2@outlook.com'}"><i class="mdui-icon material-icons">email</i></a>
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="mdui-list" mdui-collapse="{accordion: true}">
+		<a href="/" class="mdui-list-item mdui-ripple">
+			<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-blue">home</i>
+			<div class="mdui-list-item-content">首页</div>
+		</a>
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-deep-orange">archive</i>
+				<div class="mdui-list-item-content">归档</div>
+				<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				<a class="mdui-ripple sidebar_archives-link" href="/archives/2021/01/">January 2021<span class="mdui-ripple sidebar_archives-count">2</span></a><a class="mdui-ripple sidebar_archives-link" href="/archives/2020/12/">December 2020<span class="mdui-ripple sidebar_archives-count">1</span></a>
+				
+			</div>
+		</div>
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-green">class</i>
+				<div class="mdui-list-item-content">分区</div>
+				<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				<a class="mdui-ripple sidebar_archives-link" href="/categories/%E7%AB%99%E7%82%B9/">站点<span class="mdui-ripple sidebar_archives-count">1</span></a>
+				
+			</div>
+		</div>
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-brown">bookmark</i>
+				<div class="mdui-list-item-content">标签</div>
+				<i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				<a class="mdui-ripple sidebar_archives-link" href="/tags/%E7%AB%99%E7%82%B9/" rel="tag">站点<span class="mdui-ripple sidebar_archives-count">1</span></a>
+				
+			</div>
+		</div>
+		<a href="/about" class="mdui-list-item mdui-ripple">
+			<i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-purple">person</i>
+			<div class="mdui-list-item-content">关于</div>
+		</a>
+	</div>
+
+	<div class="mdui-divider"></div>
+
+	<div class="mdui-list" mdui-collapse="{accordion: true}">
+		
+		<div class="mdui-collapse-item">
+			<div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+				<div class="mdui-list-item-content">链接</div>
+				<i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+			</div>
+			<div class="mdui-collapse-item-body mdui-list mdui-list-dense">
+				
+				
+					<a href="javascript:;" class="mdui-list-item mdui-p-l-2 mdui-text-color-theme mdui-ripple" style="justify-content: center;">并没有链接</a>
+				
+			</div>
+		</div>
+	</div>
+</aside>
+	<footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+	<div class="mdui-p-y-0 mdui-text-center">
+		<p id="hitokoto"></p>
+		<p>2021 &copy; O7I2 | All rights reserved.<br>
+			Thanks <a href="https://www.chinq.xyz/?ref=heyplay" target="_blank" class="mdui-text-color-theme-accent" rel="nofollow">CHINQ</a> for her help!</p>
+	</div>
+	
+</footer>
+	<button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-color-theme-accent mdui-ripple">
+		<i class="mdui-icon material-icons">arrow_upward</i>
+	</button>
+	<!-- Main -->
+	<script src="/assets/main.js"></script>
+	<!-- MDUI, pjax.js, pace.js -->
+	<script src="//assets.heyplay.eu.org/dist/mdui/js/mdui.min.js"></script>
+	<script src="//assets.heyplay.eu.org/dist/pjax/pjax.js"></script>
+	<script src="//assets.heyplay.eu.org/dist/pace/pace.min.js"></script>
+	<!-- Web Analytics -->
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+		data-cf-beacon="{'token': '37f1b1b524134094a86158bd4ba113ce'}"></script>
+	<script>/*百度*/var _hmt=_hmt||[];</script>
+	<script defer src="https://hm.baidu.com/hm.js?aeaa4ef969dfd911a5883a704f303f6d"></script>
+	<!-- Compatibility & Safety -->
+	<script defer src="/assets/browserCompatibilityAndAvailabilityChecker.js"></script>
+	<script defer src="/assets/developerToolsDetector.js"></script>
+</body>
+
+</html>
