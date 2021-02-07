@@ -1,4 +1,11 @@
 "use strict";
+console.log("%c警告！", "background: red; color: yellow; font-size: 40px;");
+console.log("%c使用此控制台可能会给攻击者可乘之机，让其利用 Self-XSS（自跨站脚本）攻击来冒充您并窃取您的信息。\n请确保您知道你在做什么，请勿输入或粘贴来历不明的代码。", "font-size: 20px;");
+
+console.log("%cWarning!", "background: red; color: yellow; font-size: 40px;");
+console.log("%cUsing this console may give the attacker an opportunity, allowed them to impersonate you and steal your information by Self-XSS.\nPlease make sure you know what you're doing, do not enter or paste unknown code.", "font-size: 20px;");
+
+
 const heyplay = {};
 
 heyplay.uuid = function uuid(len, radix) {
@@ -45,9 +52,7 @@ heyplay.console = function () {
 	);
 };
 
-heyplay.hitokoto={};
-
-heyplay.hitokoto.load = function () {
+heyplay.hitokoto = function () {
 	heyplay.log("发起 hitokoto 的请求...");
 	fetch("https://v1.hitokoto.cn/?encode=json&charset=utf-8")
 		.then(response => {
@@ -99,16 +104,27 @@ heyplay.onDOMTreeLoaded = function () {
 	if (typeof Pjax!=="undefined") {
 		heyplay.pjax = new Pjax({
 			selectors: [
-				"head", 
+				"title",
+				"meta[name=\"description\"]",
+				"meta[property=\"og:type\"]",
+				"meta[property=\"og:title\"]",
+				"meta[property=\"og:url\"]",
+				"meta[property=\"og:description\"]",
+				"meta[property=\"og:locate\"]",
+				"meta[property=\"article:author\"]",
+				"meta[name=\"keywords\"]",
+				"meta[name=\"msapplication-starturl\"]",
+				"link[rel=\"canonical\"]",
 				"#content"
-			]
+			],
+			cacheBust: false
 		});
 		heyplay.log("创建了 pjax 的对象 heyplay.pjax");
 	} else {
 		heyplay.log("PJAX 取消，Pjax 对象不存在");
 	};
 
-	heyplay.hitokoto.load();
+	heyplay.hitokoto();
 
 	window.removeEventListener("DOMContentLoaded", heyplay.onDOMTreeLoaded);
 	heyplay.log("DOM 树 加载完成函数 执行完毕，已移除 事件侦听器");
@@ -154,13 +170,6 @@ heyplay.onLoaded = function () {
 	window.removeEventListener("load", heyplay.onLoaded);
 	heyplay.log("Document 加载完成函数 执行完毕，已移除 事件侦听器");
 };
-
-console.log("%c警告！", "background: red; color: yellow; font-size: 40px;");
-console.log("%c使用此控制台可能会给攻击者可乘之机，让其利用 Self-XSS（自跨站脚本）攻击来冒充您并窃取您的信息。\n请确保您知道你在做什么，请勿输入或粘贴来历不明的代码。", "font-size: 20px;");
-
-console.log("%cWarning!", "background: red; color: yellow; font-size: 40px;");
-console.log("%cUsing this console may give the attacker an opportunity, allowed them to impersonate you and steal your information by Self-XSS.\nPlease make sure you know what you're doing, do not enter or paste unknown code.", "font-size: 20px;");
-
 
 window.addEventListener("DOMContentLoaded", heyplay.onDOMTreeLoaded);
 window.addEventListener("load", heyplay.onLoaded);
