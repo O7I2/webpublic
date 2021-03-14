@@ -1,11 +1,11 @@
 /* Iconfont */
 @font-face {
 	font-family: "iconfont";
-	src: url("https://assets.heyplay.eu.org/icon/iconfont/iconfont.eot");
-	src: url("https://assets.heyplay.eu.org/icon/iconfont/iconfont.eot?#iefix") format("embedded-opentype"),
-		 url("https://assets.heyplay.eu.org/icon/iconfont/iconfont.woff") format("woff"),
-		 url("https://assets.heyplay.eu.org/icon/iconfont/iconfont.ttf") format("truetype"),
-		 url("https://assets.heyplay.eu.org/icon/iconfont/iconfont.svg#iconfont") format("svg");
+	src: url("https://assets.heykero.top/icon/iconfont/iconfont.eot");
+	src: url("https://assets.heykero.top/icon/iconfont/iconfont.eot?#iefix") format("embedded-opentype"),
+		 url("https://assets.heykero.top/icon/iconfont/iconfont.woff") format("woff"),
+		 url("https://assets.heykero.top/icon/iconfont/iconfont.ttf") format("truetype"),
+		 url("https://assets.heykero.top/icon/iconfont/iconfont.svg#iconfont") format("svg");
 }
 
 .iconfont {

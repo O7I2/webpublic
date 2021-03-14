@@ -6,9 +6,9 @@ console.log("%cWarning!", "background: red; color: yellow; font-size: 40px;");
 console.log("%cUsing this console may give the attacker an opportunity, allowed them to impersonate you and steal your information by Self-XSS.\nPlease make sure you know what you're doing, do not enter or paste unknown code.", "font-size: 20px;");
 
 
-const heyplay = {};
+const heykero = {};
 
-heyplay.uuid = function uuid(len, radix) {
+heykero.uuid = function uuid(len, radix) {
     let chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".split("");
 	let uuid = [],
 		i;
@@ -38,34 +38,34 @@ heyplay.uuid = function uuid(len, radix) {
 	return uuid.join("");
 };
 
-heyplay.log = function () {
-	heyplay.console("log", ...arguments);
+heykero.log = function () {
+	heykero.console("log", ...arguments);
 };
 
-heyplay.console = function () {
+heykero.console = function () {
 	let time = new Date();
 	console[arguments[0] || "log"](
-		"%c[HeyPlay] " + `%c[${time.getFullYear()}.${time.getMonth()+1}.${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}]`,
+		"%c[HeyKero] " + `%c[${time.getFullYear()}.${time.getMonth()+1}.${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}]`,
 			"font-family: Roboto, Noto, Helvetica, Arial, sans-serif; color: #03a9f4; font-weight: 700",
 			"color:grey",
 		...[...arguments].slice(1)
 	);
 };
 
-heyplay.hitokoto = function () {
-	heyplay.log("发起 hitokoto 的请求...");
+heykero.hitokoto = function () {
+	heykero.log("发起 hitokoto 的请求...");
 	fetch("https://v1.hitokoto.cn/?encode=json&charset=utf-8")
 		.then(response => {
-			heyplay.log("hitokoto 加载完毕，解析 JSON 为对象...");
+			heykero.log("hitokoto 加载完毕，解析 JSON 为对象...");
 			return response.json();
 		})
 		.then(hitokoto => {
-			heyplay.log("hitokoto 解析完毕，正在应用到 DOM 树");
+			heykero.log("hitokoto 解析完毕，正在应用到 DOM 树");
 			let hitokotoContainer;
 			try {
 				hitokotoContainer = document.getElementById("hitokoto");
 			} catch (error) {
-				heyplay.log("找不到 hitokoto 的容器", error);
+				heykero.log("找不到 hitokoto 的容器", error);
 			};
 			hitokotoContainer.innerHTML = 
 				`<span title="${
@@ -93,16 +93,16 @@ heyplay.hitokoto = function () {
 							hitokoto.commit_from
 						} 端，${hitokoto.created_at} 时 添加\n` + 
 					`该 hitokoto 有 ${hitokoto.length}${hitokoto.hitokoto.length===hitokoto.length?"":`(${hitokoto.hitokoto.length})`} 个字长，ID 为 ${hitokoto.id}，UUID 为 ${hitokoto.uuid}，审核员标识为 ${hitokoto.reviewer}`
-				}" onclick='mdui.dialog({"title":"Hitokoto 详细信息","content":this.title.replace(/\\n/g,"<br>"),"buttons":[{"text":"换一个","onClick":heyplay.hitokoto.load},{"text": "关闭"}]});'>${hitokoto.hitokoto}</span>`;
-			heyplay.log("hitokoto 完毕");
+				}" onclick='mdui.dialog({"title":"Hitokoto 详细信息","content":this.title.replace(/\\n/g,"<br>"),"buttons":[{"text":"换一个","onClick":heykero.hitokoto.load},{"text": "关闭"}]});'>${hitokoto.hitokoto}</span>`;
+			heykero.log("hitokoto 完毕");
 		});
 }
 
-heyplay.onDOMTreeLoaded = function () {
-	heyplay.log("[Event]", "DOM 树 加载完毕");
+heykero.onDOMTreeLoaded = function () {
+	heykero.log("[Event]", "DOM 树 加载完毕");
 
 	if (typeof Pjax!=="undefined") {
-		heyplay.pjax = new Pjax({
+		heykero.pjax = new Pjax({
 			selectors: [
 				"title",
 				"meta[name=\"description\"]",
@@ -119,19 +119,19 @@ heyplay.onDOMTreeLoaded = function () {
 			],
 			cacheBust: false
 		});
-		heyplay.log("创建了 pjax 的对象 heyplay.pjax");
+		heykero.log("创建了 pjax 的对象 heykero.pjax");
 	} else {
-		heyplay.log("PJAX 取消，Pjax 对象不存在");
+		heykero.log("PJAX 取消，Pjax 对象不存在");
 	};
 
-	heyplay.hitokoto();
+	heykero.hitokoto();
 
-	window.removeEventListener("DOMContentLoaded", heyplay.onDOMTreeLoaded);
-	heyplay.log("DOM 树 加载完成函数 执行完毕，已移除 事件侦听器");
+	window.removeEventListener("DOMContentLoaded", heykero.onDOMTreeLoaded);
+	heykero.log("DOM 树 加载完成函数 执行完毕，已移除 事件侦听器");
 };
 
-heyplay.onLoaded = function () {
-	heyplay.log("[Event]", "Docuemnt 加载完毕")
+heykero.onLoaded = function () {
+	heykero.log("[Event]", "Docuemnt 加载完毕")
 
 	if (typeof mdui!=="undefined") {
 		mdui.$(function() {
@@ -154,23 +154,23 @@ heyplay.onLoaded = function () {
 				})();
 			});
 		});
-		heyplay.log("[Component]", "Go To Top 按钮完毕")
+		heykero.log("[Component]", "Go To Top 按钮完毕")
 	} else {
-		heyplay.log("Go To Top 按钮加载失败，mdui 对象不存在");
+		heykero.log("Go To Top 按钮加载失败，mdui 对象不存在");
 	};
 	/*(function () {
 		let copiedAlert = mdui.alert;
 		mdui.alert = function () {
 			copiedAlert(...arguments);
-			heyplay.log("mdui.alert 被调用");
+			heykero.log("mdui.alert 被调用");
 		};
 	})();*/
 	
 
-	window.removeEventListener("load", heyplay.onLoaded);
-	heyplay.log("Document 加载完成函数 执行完毕，已移除 事件侦听器");
+	window.removeEventListener("load", heykero.onLoaded);
+	heykero.log("Document 加载完成函数 执行完毕，已移除 事件侦听器");
 };
 
-window.addEventListener("DOMContentLoaded", heyplay.onDOMTreeLoaded);
-window.addEventListener("load", heyplay.onLoaded);
-heyplay.log("添加了对 DOM 树加载完成 以及 Document加载完成 事件的侦听器")
+window.addEventListener("DOMContentLoaded", heykero.onDOMTreeLoaded);
+window.addEventListener("load", heykero.onLoaded);
+heykero.log("添加了对 DOM 树加载完成 以及 Document加载完成 事件的侦听器")
