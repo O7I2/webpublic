@@ -103,6 +103,7 @@ heykero.onDOMTreeLoaded = function () {
 
 	if (typeof Pjax!=="undefined") {
 		heykero.pjax = new Pjax({
+			elements: "a[href]",
 			selectors: [
 				"title",
 				"meta[name=\"description\"]",
@@ -124,10 +125,34 @@ heykero.onDOMTreeLoaded = function () {
 		heykero.log("PJAX 取消，Pjax 对象不存在");
 	};
 
+	//heykero.developerTool.detector();
+
 	heykero.hitokoto();
 
 	window.removeEventListener("DOMContentLoaded", heykero.onDOMTreeLoaded);
 	heykero.log("DOM 树 加载完成函数 执行完毕，已移除 事件侦听器");
+};
+
+heykero.developerTool={};
+
+heykero.developerTool.shortcutKeyDetector = function (e) {
+	if (
+		(e.key === "F12" || e.code === "F12" || e.keyCode === 123) ||
+		(
+			(e.key === "I" || e.code === "KeyI" || e.keyCode === 73) &&
+			e.shiftKey && e.ctrlKey
+		)
+	) {
+		heykero.developerTool.whenOpened();
+	};
+};
+
+heykero.developerTool.whenOpened = function () {
+	window.removeEventListener("keydown", heykero.developerTool.shortcutKeyDetector);
+	mdui.dialog({
+		"title": "开发者工具已启用",
+		"content": "水平有限，代码写得很垃圾，希望不会被嘲笑，呼呼"
+	});
 };
 
 heykero.onLoaded = function () {
@@ -173,4 +198,5 @@ heykero.onLoaded = function () {
 
 window.addEventListener("DOMContentLoaded", heykero.onDOMTreeLoaded);
 window.addEventListener("load", heykero.onLoaded);
-heykero.log("添加了对 DOM 树加载完成 以及 Document加载完成 事件的侦听器")
+window.addEventListener("keydown", heykero.developerTool.shortcutKeyDetector);
+heykero.log("添加了事件侦听器")
